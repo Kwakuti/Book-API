@@ -71,6 +71,7 @@ exports.deleteAllBook = tryCatch(factory.deleteAll(Book));
 
 exports.searchBooks = tryCatch(factory.search(Book, {field:  ['title'], storeField:  ['title', 'format', 'image'] }));
 
+//something is wrong here
 exports.downloadBook = tryCatch(async (request, response, next) => {
     if(request.user) {}
     if(!request.params.bookId) { return next(new CustomError(400, 'Invalid URL...')) }
